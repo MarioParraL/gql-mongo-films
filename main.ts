@@ -9,7 +9,7 @@ import { Film } from "./resolvers/Film.ts";
 import { Director } from "./resolvers/Director.ts";
 
 
-const MONGO_URL = Deno.env.get("MONGO_URL");
+const MONGO_URL = Deno.env.get("MONGO_URL") || env.MONGO_URL;
 if (!MONGO_URL) {
   throw new Error("Please provide a MongoDB connection string");
 }
