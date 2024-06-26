@@ -8,8 +8,7 @@ import { Mutation } from "./resolvers/mutation.ts";
 import { Film } from "./resolvers/Film.ts";
 import { Director } from "./resolvers/Director.ts";
 
-const env = await load();
-const MONGO_URL = env.MONGO_URL || Deno.env.get("MONGO_URL");
+const MONGO_URL = Deno.env.get("MONGO_URL");
 
 if (!MONGO_URL) {
   console.log("No mongo URL found");
